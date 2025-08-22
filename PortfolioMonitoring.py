@@ -21,10 +21,10 @@ st.set_page_config(
 )
 
 tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["Data Upload",
-                                        "Metric Performance Visuals",
-                                        "Percentage Performance Visuals",
-                                        "Metric Performance Clusters",
-                                        "Percentage Performance Clusters",
+                                        "Metric Analytics",
+                                        "Percentage Analytics",
+                                        "Metric Clusters",
+                                        "Percentage Clusters",
                                         "Sentiment Analysis",])
 
 with tab1:
@@ -1029,5 +1029,6 @@ with tab6:
 
         table["Date"] = table["Date"].dt.strftime("%Y-%m-%d")
         table["Sentiment"] = table["Sentiment"].map("{:+.2f}".format)
+
 
         st.dataframe(table, use_container_width=True)
